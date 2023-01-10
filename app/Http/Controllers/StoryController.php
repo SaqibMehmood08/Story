@@ -14,9 +14,9 @@ class StoryController extends Controller
 
 
     public function story(){
-        $collection=auth()->user()->following()->pluck("friend");
 
- $stories=Story::whereIn("user_id",$collection)->orderBy("created_at","DESC")->get();
+        $collection=auth()->user()->following()->pluck("friend");
+        $stories=Story::whereIn("user_id",$collection)->orderBy("created_at","DESC")->get();
 
 // return $collection;
 
