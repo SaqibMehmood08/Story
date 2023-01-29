@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripeController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\FirebaseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +29,13 @@ Route::get('success',[StripeController::class,'success']);
 // Route::get('/story-view', [App\Http\Controllers\StoryController::class, 'story'])->name('storiess');
 // Route::get('addmoney/stripe', array('as' => 'addmoney.paystripe','uses' => 'MoneySetupController@PaymentStripe'));
 // Route::post('addmoney/stripe', array('as' => 'addmoney.stripe','uses' => 'MoneySetupController@postPaymentStripe'));
+// Route::post('/', [TestController::class, 'create']);
+// Route::get('/', [TestController::class, 'index']);
+// Route::put('/', [TestController::class, 'edit']);
+// Route::delete('/', [TestController::class, 'delete']);
+Route::get('/firebase/check-connection', [FirebaseController::class, 'index'])->name('firebase.index');
+Route::get('/firebase/fetch-Data', [FirebaseController::class, 'fetchData']);
+Route::get('/firebase/update-Data', [FirebaseController::class, 'updateData']);
+Route::get('/firebase/delete-Data', [FirebaseController::class, 'DeleteData']);
+Route::get('/firebase/delete-Data-with-condition', [FirebaseController::class, 'DeleteDatawithCondition']);
+// Route::get('/firebase/check-connection', 'FirebaseController@checkDatabase');

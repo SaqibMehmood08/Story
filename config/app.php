@@ -135,10 +135,10 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
+
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -162,10 +162,13 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         // Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
+        // Kreait\Laravel\Firebase\ServiceProvider::class,
 
         /*
          * Package Service Providers...
          */
+        // Kreait\Firebase\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -177,12 +180,13 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
 
+
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Class Aliases
-    |--------------------------------------------------------------------------
+    | Clas      s Aliases
+        |--------------------------------------------------------------------------
     |
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
