@@ -39,3 +39,11 @@ Route::get('/firebase/update-Data', [FirebaseController::class, 'updateData']);
 Route::get('/firebase/delete-Data', [FirebaseController::class, 'DeleteData']);
 Route::get('/firebase/delete-Data-with-condition', [FirebaseController::class, 'DeleteDatawithCondition']);
 // Route::get('/firebase/check-connection', 'FirebaseController@checkDatabase');
+Route::post('/firebase/view',[FirebaseController::class,'returnView']);
+Route::get('/firebase/views',[FirebaseController::class,'ShowData']);
+
+Route::get('/firebase/delete',[FirebaseController::class,'deleteFirebaseData']);
+Route::get('/firebase/update',[FirebaseController::class,'updateFirebaseData']);
+
+Route::get('/firebase/TestInsert',[FirebaseController::class,'TestInsert']);
+

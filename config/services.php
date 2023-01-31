@@ -30,5 +30,14 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'firebase' => [
+        'apiKey' => 'AIzaSyCZBi9yQGBXUp0iRAgKwv4XfqjNPvfoXJ0',
+        'authDomain' => "banolive-35958.firebaseapp.com",
+        'databaseURL' => "https://banolive-35958-default-rtdb.firebaseio.com/",
+        "projectId"=> "banolive-35958",
+        "storageBucket"=> "banolive-35958.appspot.com",
+        "messagingSenderId"=> "763111985238",
+        "appId"=> "1:763111985238:web:6bd1d22410255c67f56bf7",
+        "measurementId"=>  "G-XGCMFCYKKC"
+    ],
 ];
