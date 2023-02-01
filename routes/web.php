@@ -45,5 +45,5 @@ Route::get('/firebase/views',[FirebaseController::class,'ShowData']);
 Route::get('/firebase/delete',[FirebaseController::class,'deleteFirebaseData']);
 Route::get('/firebase/update',[FirebaseController::class,'updateFirebaseData']);
 
-Route::get('/firebase/TestInsert',[FirebaseController::class,'TestInsert']);
+Route::get('TestJquery',[TestController::class,'test']);
 
