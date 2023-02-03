@@ -47,3 +47,9 @@ Route::get('/firebase/update',[FirebaseController::class,'updateFirebaseData']);
 
 Route::get('TestJquery',[TestController::class,'test']);
 
+// firebase notifications start
+
+
+Route::get('/notifications/firebase',[FirebaseController::class,'firebaseViewPage']);
+
+Route::post('/notifications/send',[FirebaseController::class,'firebasesendNotification']);
