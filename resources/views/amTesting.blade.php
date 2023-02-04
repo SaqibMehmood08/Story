@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,98 +7,89 @@
     <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-database-compat.js"></script>
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
+
 <body>
-<h6 id="h6">Jqury day 1</h6>
-<ul id="list">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-</ul>
-<p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, accusamus?</p>
-<div id="div">Lorem ipsum dolor sit amet.</div>
-<div class="set_method" id="set">
-    <h1 >Pakistan</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ut mollitia ea, rem perspiciatis quibusdam nemo ad id. Aut, nam.</p>
-</div>
+    <h6 id="h6">Jquery day 5</h6>
 
-<div  id="addclass">
-    <h5 class="h5">Pakistan</h5>
-    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ut mollitia ea, rem perspiciatis quibusdam nemo ad id. Aut, nam.</span>
-</div>
-<button  id="add" >Add class</button>
-<button   id="remove" class="btn btn-danger">Remove class</button>
-<button  id="toggle" class="btn btn-dark">Toggle class</button>
-<div  id="inlineStyle">
-    <h5 class="inline_h5">Inline style ,style me </h5>
-    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ut mollitia ea, rem perspiciatis quibusdam nemo ad id. Aut, nam.</span>
-    <br>
-    <button id="stylebtn" class=" btn btn-success">Style Now</button>
-</div>
-
-<style>
-.newcolor{
-color:red;
-    }
-    .h5{
-color:red;
-    }
-</style>
-<script>
-// inline styles
-
-$('#stylebtn').click(function(){
-$('#inlineStyle').css({"background":"red","color":"white","margin-top":"5px"});
-})
+    <div id="box">
+         <h2 >Append</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aut aperiam earum adipisci provident
+            temporibus, deserunt repellendus laboriosam reprehenderit recusandae impedit possimus error quas esse quis
+            natus repellat cupiditate facilis culpa quia ipsa distinctio! Illo corrupti culpa expedita nobis
+            praesentium!
+        </p>
 
 
+    </div>
 
-//add class
-$('document').ready(function(){
-$('#addclass').addClass('newcolor');
-});
-// removeclass
-$('#remove').click(function(){
-$('.h5').removeClass('h5');
-});
-// removeclass
-$('#toggle').click(function(){
-$('.h5').toggleClass('h5');
-});
+    <div id="box2">
 
+       <p>
+          1 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       </p>
+       <p>
+      2 r adipisicing elit  Lorem ipsum dolor sit amet consectetu.
+    </p>
+    <p>
+       3 Lorem ipsum dolor sit amet consectetu.
+     </p>
 
+   </div>
+    <center>
+        <button id="appendbtn" class="btn btn-primary">Append</button>
+      <button id="prependbtn" class="btn btn-primary">Prepend</button>
+      <button id="afterbtn" class="btn btn-primary">After</button>
+      <button id="beforebtn" class="btn btn-primary">Before</button>
+      <button id="emptybtn" class="btn btn-primary">empty</button>
+      <button id="removebtn" class="btn btn-primary">Remove</button>
+      <button id="clonebtn" class="btn btn-primary">Clone</button>
+      <button id="replacebtn" class="btn btn-primary">Replace</button>
 
-$('document').ready(function() {
+    </center>
 
-    var element=$('#h6').html(); // element html get
-    // console.log(element);
-    // style the html elements in the list
-    // $("#list li").css("border","2px solid red");
-    // $("#list ").css("color","blue");
-    // $("* ").css("color","blue");
-    // $("#list ").css("list-style","none");
-    // $("ul li:eq(2)").css("color","orange"); //lower ul  o,1,2
+    <style>
+        #prependAppend {
+            border: 3px solid red;
+            background-color: green;
+        }
+    </style>
+    <script>
+        var count = 0;
+        // append pre Pend
+      $('document').ready(function () {
+        $('#appendbtn').click(function() {
+            $('#box').append('<h5  style="color:pink">append Pend</h5>');
+        });
 
-//     $('#div').click(function(){
-//         $('#div').css("color","orange");
-// })
-// $('.paragraph').contextmenu(function(){
-//         $('.paragraph').css("color","orange");
-// })
-
-// });
-
-});
-$('.set_method').click(function(){
-  var values= $('.set_method h1').text("wooo ");
-  var values= $('.set_method p').html(" <h1>Girls </h1>lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ut mollitia ea, rem");
-  var values= $('.set_method h1').attr("class","newcolor");
-// console.log(values);
-    });
-
-</script>
+        $('#prependbtn').click(function() {
+            $('#box').prepend('<h5  style="color:pink">PrePend</h5>');
+        });
+        $('#afterbtn').click(function() {
+            $('#box').after('<h5  style="color:pink">After the box </h5>'+ count++);
+        });
+        $('#beforebtn').click(function() {
+            $('#box').before('<h5  style="color:pink">Before the box </h5>'+ count++);
+        });
+        $('#emptybtn').click(function() {
+            $('#box').empty();
+        });
+        $('#removebtn').click(function() {
+            $('#box').remove();
+        });
+    //  clone
+            $('#clonebtn').click(function(){
+            $('#box h2').clone().prependTo("#box2");
+        });
+        // replace
+        $('replacebtn').click(function(){
+            $('#box2 p').replaceWith('<h5  style="color:pink">Replace</h5>');
+        })
+    </script>
 </body>
+
 </html>
