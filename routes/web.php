@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\FirebaseController;
+use App\Http\Controllers\BotmanController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +55,8 @@ Route::get('TestJquery',[TestController::class,'test']);
 Route::get('/notifications/firebase',[FirebaseController::class,'firebaseViewPage']);
 
 Route::post('/notifications/send',[FirebaseController::class,'firebasesendNotification']);
+
+Route::get('/botman',[BotmanController::class,'hendleViewPage']);
+Route::post('/botman',[BotmanController::class,'hendle']);
+//Cache
+Route::get('/cache',[ProductsController::class,'sayHelloTocache']);
