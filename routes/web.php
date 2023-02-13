@@ -1,10 +1,13 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StripeController;
+use Illuminate\Support\LazyCollection;
 use App\Http\Controllers\TestController;
-use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\BotmanController;
+use App\Http\Controllers\StripeController;
+use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -63,3 +66,90 @@ Route::get('/cache',[ProductsController::class,'sayHelloTocache']);
 // DashBoard controller
 
 Route::get('/dashboard',[TestController::class,'dashboard']);
+
+Route::get('/lazy',function(){
+// $collection=Collection::times(10000)
+// ->map(function($number){
+// return pow(2,$number);
+// })
+// ->all();
+
+$collection=LazyCollection::times(10000)
+->map(function($number){
+return pow(2,$number);
+})
+->all();
+User::cursor();
+
+return "done";
+});
+
+
+Route::get('/generator',function(){
+function NotHappyFunction($number){
+$return=[];
+for($i=0;$i<$number;$i++){
+yield $i;
+}
+return $return;
+
+}
+
+
+
+foreach(NotHappyFunction(1000000000) as $number){
+if($number %1000==0){
+    dump("Hello not happy functiion");
+}
+}
+
+
+//  function HappyFunction($string){
+//     foreach($string as $string){
+
+//         dump("start");
+
+//         yield $string;
+
+//         dump("end");
+
+
+//     }
+    // dump(1);
+    // yield "one";
+    // dump(2);
+    // dump(3);
+    // yield "two";
+    // dump(4);
+
+    // dump(5);
+    // yield "three";
+    // dump(6);
+
+ }
+// return get_class_methods(HappyFunction("pakistan"));
+// return HappyFunction("pakistan")->current();
+// $return = HappyFunction();
+
+// dump($return->current());
+
+
+// $return->next();
+
+// dump($return->current());
+
+
+// $return->next();
+// dump($return->current());
+// $return->next();
+
+
+// foreach(HappyFunction(["one","two","three"]) as $result){
+//     if($result=="two"){
+//         return;
+//     }
+// dump($result);
+// }
+    // });
+
+);
