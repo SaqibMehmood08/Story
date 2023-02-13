@@ -60,3 +60,6 @@ Route::get('/botman',[BotmanController::class,'hendleViewPage']);
 Route::post('/botman',[BotmanController::class,'hendle']);
 //Cache
 Route::get('/cache',[ProductsController::class,'sayHelloTocache']);
+// DashBoard controller
+
+Route::get('/dashboard',[TestController::class,'dashboard']);
