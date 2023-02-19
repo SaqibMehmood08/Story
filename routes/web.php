@@ -66,7 +66,7 @@ Route::get('/cache',[ProductsController::class,'sayHelloTocache']);
 // DashBoard controller
 
 Route::get('/dashboard',[TestController::class,'dashboard']);
-
+// yields
 Route::get('/lazy',function(){
 // $collection=Collection::times(10000)
 // ->map(function($number){
