@@ -28,7 +28,8 @@ Route::get('success',[StripeController::class,'success']);
 
 // Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/event', [App\Http\Controllers\HomeController::class, 'AuthUser']);
 
 
 // Route::get('/story-view', [App\Http\Controllers\StoryController::class, 'story'])->name('storiess');

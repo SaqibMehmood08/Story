@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Event\UserCreated;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+
+    public function AuthUser()
+    {
+event(new UserCreated('Email has been send to you'));
     }
 }
