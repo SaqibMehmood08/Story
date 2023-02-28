@@ -31,6 +31,8 @@ Route::get('success',[StripeController::class,'success']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/event', [App\Http\Controllers\HomeController::class, 'AuthUser']);
 
+// working on store
+// store and related stuff
 
 // Route::get('/story-view', [App\Http\Controllers\StoryController::class, 'story'])->name('storiess');
 // Route::get('addmoney/stripe', array('as' => 'addmoney.paystripe','uses' => 'MoneySetupController@PaymentStripe'));

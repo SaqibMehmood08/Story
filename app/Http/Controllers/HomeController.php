@@ -31,5 +31,6 @@ class HomeController extends Controller
     public function AuthUser()
     {
 event(new UserCreated('Email has been send to you'));
+return "Hitt";
     }
 }
