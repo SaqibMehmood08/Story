@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\LazyCollection;
+use Symfony\Component\Process\Process;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\BotmanController;
 use App\Http\Controllers\StripeController;
@@ -77,34 +78,39 @@ Route::get('/lazy',function(){
 // })
 // ->all();
 
-$collection=LazyCollection::times(10000)
-->map(function($number){
-return pow(2,$number);
-})
-->all();
-User::cursor();
 
-return "done";
+Route::get('/process-test',function(){
+   return Process::run('ls -la')->output();
 });
+});
+// $collection=LazyCollection::times(10000)
+// ->map(function($number){
+// return pow(2,$number);
+// })
+// ->all();
+// User::cursor();
+
+// return "done";
+// });
 
 
-Route::get('/generator',function(){
-function NotHappyFunction($number){
-$return=[];
-for($i=0;$i<$number;$i++){
-yield $i;
-}
-return $return;
+// Route::get('/generator',function(){
+// function NotHappyFunction($number){
+// $return=[];
+// for($i=0;$i<$number;$i++){
+// yield $i;
+// }
+// return $return;
 
-}
+// }
 
 
 
-foreach(NotHappyFunction(1000000000) as $number){
-if($number %1000==0){
-    dump("Hello not happy functiion");
-}
-}
+// foreach(NotHappyFunction(1000000000) as $number){
+// if($number %1000==0){
+//     dump("Hello not happy functiion");
+// }
+// }
 
 
 //  function HappyFunction($string){
@@ -129,7 +135,7 @@ if($number %1000==0){
     // yield "three";
     // dump(6);
 
- }
+//  }
 // return get_class_methods(HappyFunction("pakistan"));
 // return HappyFunction("pakistan")->current();
 // $return = HappyFunction();
@@ -155,4 +161,4 @@ if($number %1000==0){
 // }
     // });
 
-);
+
