@@ -79,10 +79,10 @@ Route::get('/lazy',function(){
 // ->all();
 
 
-Route::get('/process-test',function(){
-   return Process::run('ls -la')->output();
-});
-});
+// Route::get('/process-test',function(){
+//    return Process::run('ls -la')->output();
+// });
+// });
 // $collection=LazyCollection::times(10000)
 // ->map(function($number){
 // return pow(2,$number);
